@@ -9,7 +9,7 @@ const GetFruits = () =>
         fetch('http://localhost:8000/items')
         .then(res => res.json())
         .then(data => setFruits(data));
-    })
+    } , [])
     return [fruits , setFruits]
 };
 

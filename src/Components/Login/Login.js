@@ -5,6 +5,7 @@ import LoginWithGoogle from './Providers/LoginWithGoogle';
 import './Login.css'
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Divider from '../Common/Divider';
 
 
 const Login = () => 
@@ -55,6 +56,7 @@ const Login = () =>
                 <div className="row">
                     <div className="col-md-8 col-12 shadow-lg p-5 mx-auto">
                         <LoginWithEmail emailLogin={handleEmailPasswordLogin} erorr= {erorr}></LoginWithEmail>
+                        <Divider></Divider>
                         <div className='text-center social-btn'>
 
                             <LoginWithGoogle googleLogin={handleGoogleLogIn}></LoginWithGoogle>

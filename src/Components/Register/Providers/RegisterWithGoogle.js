@@ -1,9 +1,11 @@
 import React from 'react';
 
-const RegisterWithGoogle = () => {
+const RegisterWithGoogle = (props) => 
+{
+    const { googleSignup } = props;
     return (
         <div>
-            <button className='w-50 mx-auto p-2 mb-3'>Register with Google</button>
+            <button className='w-50 mx-auto p-2 mb-3' onClick={googleSignup}>Register with Google</button>
         </div>
     );
 };

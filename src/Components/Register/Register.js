@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Divider from '../Common/Divider';
 import RegisterWithEmail from './Providers/RegisterWithEmail';
 import RegisterWithGithub from './Providers/RegisterWithGithub';
 import RegisterWithGoogle from './Providers/RegisterWithGoogle';
@@ -41,6 +42,7 @@ const Register = () =>
                <div className="row">
                    <div className="col-md-8 col-12 shadow-lg p-5 mx-auto">
                        <RegisterWithEmail emailRegister = {handleEmailPasswordRegister}></RegisterWithEmail>
+                       <Divider></Divider>
                        <div className='text-center social-btn'>
                            <RegisterWithGithub></RegisterWithGithub>
                            <RegisterWithGoogle googleSignup = {handleGoogleRegister}></RegisterWithGoogle>

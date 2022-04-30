@@ -11,3 +11,14 @@
     height: 100%;
     border-radius: 100%;
 }
+
+.mng-btn
+{
+    background-color: #363062;
+    color: #fff;
+    border: 2px solid transparent;
+    padding:0.7em 3em; 
+    border-radius:0.4em;
+}
+
+

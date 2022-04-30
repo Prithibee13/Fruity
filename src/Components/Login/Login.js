@@ -54,7 +54,7 @@ const Login = () =>
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8 col-12 shadow-lg p-5 mx-auto">
+                    <div className="col-md-6 col-12 shadow-lg p-5 mx-auto">
                         <LoginWithEmail emailLogin={handleEmailPasswordLogin} erorr= {erorr}></LoginWithEmail>
                         <Divider></Divider>
                         <div className='text-center social-btn'>

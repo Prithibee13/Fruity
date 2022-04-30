@@ -25,7 +25,7 @@ const RegisterWithEmail = (props) => {
                         <Form.Control type="password" className='w-50 mx-auto' name='password' placeholder="Enter your Password" />
                     </Form.Group>
                     <Button className='w-25 my-3' type="submit">
-                        Submit
+                        Register
                     </Button>
                 </Form>
 

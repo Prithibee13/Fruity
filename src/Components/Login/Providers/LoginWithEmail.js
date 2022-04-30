@@ -22,7 +22,7 @@ const LoginWithEmail = (props) =>
                         <Form.Control type="password" className='w-50 mx-auto' name='password'  placeholder="Enter your Password" required/>
                     </Form.Group>
                     <Button className='w-25 mt-3 mb-3' type="submit">
-                        Submit
+                        Log in
                     </Button>
                 </Form>
                 <p>{error}</p>

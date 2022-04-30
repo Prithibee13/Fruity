@@ -1,7 +1,10 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const ProductDetailesTable = () => {
+const ProductDetailesTable = (props) => 
+{
+    const { item } = props;
+    const { name ,price , Quantity , _id , supplier_name } = item ;  
     return (
         <div>
             <h2 className="text-center">Product Detailes</h2>
@@ -22,27 +25,27 @@ const ProductDetailesTable = () => {
                                     <tr>
                                         <td>1</td>
                                         <td>Id</td>
-                                        <td></td>
+                                        <td>{_id}</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td>Name</td>
-                                        <td></td>
+                                        <td>{name}</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td>Price</td>
-                                        <td></td>
+                                        <td>{price}</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td>Quantity</td>
-                                        <td></td>
+                                        <td>{Quantity}</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>Supplier Name</td>
-                                        <td></td>
+                                        <td>{supplier_name}</td>
                                     </tr>
                                 </tbody>
                             </Table>

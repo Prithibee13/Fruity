@@ -6,7 +6,7 @@ import "./Fruit.css"
 const Fruit = (props) => {
 
     const { fruit } = props;
-    const { _id, Name, img } = fruit;
+    const { _id, name, img , description , Quantity , supplier_name , price } = fruit;
 
     const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const Fruit = (props) => {
 
     const toManagement = (id) =>
     {
-        user ? navigate(`management/${id}`) : navigate('/login'); 
+        user ? navigate(`inventory/${id}`) : navigate('/login'); 
         
     }
     return (
@@ -24,10 +24,13 @@ const Fruit = (props) => {
                     <div className='round-img mx-auto'>
                         <img src={img} className="card-img-top w-100" alt="..." />
                     </div>
-                    <div className="card-body text-center">
-                        <h2 className="card-title">{Name}</h2>
-
-                        <button className='mng-btn rounded' onClick={()=>toManagement(_id)}>Manage Item</button>
+                    <div className="card-body">
+                        <h2 className="card-title">{name}</h2>
+                        <p>{description}</p>
+                        <p>Price : {price}</p>
+                        <p>In stock : {Quantity}</p>
+                        <p>Supplier : {supplier_name}</p>
+                        <button className='inv-btn rounded' onClick={()=>toManagement(_id)}>Update Stock</button>
 
                     </div>
                 </div>

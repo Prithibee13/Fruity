@@ -1,5 +1,5 @@
 import React from 'react';
-import Fruits from '../../Products/Fruits/Fruits';
+import Fruits from '../../Products/Inventory/Fruits';
 import Banner from '../Banner/Banner';
 
 const Home = () => {

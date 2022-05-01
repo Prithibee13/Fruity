@@ -5,7 +5,6 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home/Home';
 
 import Login from './Components/Login/Login';
-import Management from './Components/Management/Management/Management';
 import NotFound from './Components/NotFound/NotFound ';
 import FruitDetailes from './Components/Products/FruitsDetails/FruitDetailes/FruitDetailes';
 import Register from './Components/Register/Register';

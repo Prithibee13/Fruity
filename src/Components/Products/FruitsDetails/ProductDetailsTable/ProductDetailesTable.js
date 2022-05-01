@@ -21,7 +21,7 @@ const ProductDetailesTable = (props) =>
 
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody className='table-body'>
                                     <tr>
                                         <td>1</td>
                                         <td>Id</td>

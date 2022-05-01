@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import GetFruits from '../../../../Hooks/GetFruits';
 import ProductDetailesTable from '../ProductDetailsTable/ProductDetailesTable';
 
 const FruitDetailes = () => 
@@ -8,17 +7,19 @@ const FruitDetailes = () =>
     
     const { id } = useParams();
 
-    const [item , setItem] = GetFruits(); 
-    const newItem = [...item];
+    const [item , setitem] = useState({})
 
-
-    const fillteredArray = newItem.filter(product => product._id === id);
-
-
+    useEffect(()=>
+    {
+        const url = `http://localhost:8000/item/${id}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setitem(data))
+    } , [])
 
     return (
-        <div>
-            <ProductDetailesTable item = {fillteredArray[0]}></ProductDetailesTable>
+        <div className='mar-20'>
+            <ProductDetailesTable item={item}></ProductDetailesTable>
         </div>
     );
 };

@@ -13,7 +13,6 @@ const Management = () =>
 
            <AddProduct></AddProduct>
 
-           <AddQuantity></AddQuantity>
 
            <DeleteProduct></DeleteProduct>
            

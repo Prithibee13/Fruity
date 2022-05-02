@@ -3,16 +3,23 @@ import { Table } from 'react-bootstrap';
 
 const ProductDetailesTable = (props) => 
 {
-    const { item } = props;
-    const { name ,price , Quantity , _id , supplier_name } = item ;  
+
+
+    const { item  } = props;
+    const { name ,price , Quantity , _id , supplier_name , sale , img } = item;
+    
+    
     return (
         <div>
             <h2 className="text-center">Product Detailes</h2>
             <section>
                 <div className="container">
-                    <div className="row p-5">
-                        <div className="col-md-6 col-12 mx-auto">
-                            <Table striped bordered hover className='p-5'>
+                    <div className="row p-5 g-5">
+                        <div className="col-md-4 col-12 ">
+                            <img src={img} className="w-100 h-75" alt="" />
+                        </div>
+                        <div className="col-md-8 col-12 ">
+                            <Table striped bordered hover className='p-5 text-center'>
                                 <thead>
                                     <tr>
                                         <th>Sl no.</th>
@@ -47,12 +54,18 @@ const ProductDetailesTable = (props) =>
                                         <td>Supplier Name</td>
                                         <td>{supplier_name}</td>
                                     </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Sale</td>
+                                        <td>{sale}</td>
+                                    </tr>
                                 </tbody>
                             </Table>
                         </div>
                     </div>
                 </div>
 
+                
 
             </section>
         </div>

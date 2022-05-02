@@ -1,6 +1,6 @@
 import React from 'react';
 import Gallary from '../../Gallary/Gallary';
-import Fruits from '../../Products/Inventory/Fruits';
+import Inventories from '../../Products/Inventories/Inventories';
 import Quotes from '../../Quotes/Quotes';
 import Banner from '../Banner/Banner';
 
@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Fruits></Fruits>
+            <Inventories></Inventories>
             <Gallary></Gallary>
             <Quotes></Quotes>
         </div>

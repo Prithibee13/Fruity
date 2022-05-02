@@ -24,9 +24,10 @@ const FruitDetailes = () => {
         let newItem = { ...item };
         newItem.Quantity -= 1
         newItem.sale += 1
-        setItem(newItem);
+        
 
-        handleitemStock(item)
+        handleItemDelivered(newItem)
+        setItem(newItem);
     }
 
     const handleRestock = (event) => 
@@ -37,15 +38,16 @@ const FruitDetailes = () => {
         let newItem = { ...item };
         const newQuantity = parseInt(amount);
         newItem.Quantity += newQuantity;
-        setItem(newItem); 
 
-        handleitemStock(item);
+        handleItemRestock(newItem)
+        
+        setItem(newItem)   
+
     }
 
-
-    const handleitemStock = (item) =>
+    async function handleItemRestock(item)
     {
-        const url = `http://localhost:8000/item/${id}`;
+        const url = `http://localhost:8000/restock/${id}`;
         fetch(url , {
             method : "PUT",
             headers:
@@ -61,8 +63,26 @@ const FruitDetailes = () => {
             })
     }
 
+    const handleItemDelivered = (item) =>
+    {
+        
+        const url = `http://localhost:8000/delivered/${id}`;
+        fetch(url , {
+            method : "PUT",
+            headers:
+            {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(item)
+        })
+        .then(res => res.json())
+        .then(data =>
+            {
+                console.log(data);
+            })
+    }
     
-    console.log(item);
+
     return (
         <div className='mar-20'>
             <ProductDetailesTable item={item}></ProductDetailesTable>

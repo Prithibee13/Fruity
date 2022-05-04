@@ -12,7 +12,7 @@ const FruitDetailes = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:8000/item/${id}`;
+        const url = `https://fruit-server-ph.herokuapp.com/item/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -47,7 +47,7 @@ const FruitDetailes = () => {
 
     async function handleItemRestock(item)
     {
-        const url = `http://localhost:8000/restock/${id}`;
+        const url = `https://fruit-server-ph.herokuapp.com/restock/${id}`;
         fetch(url , {
             method : "PUT",
             headers:
@@ -66,7 +66,7 @@ const FruitDetailes = () => {
     const handleItemDelivered = (item) =>
     {
         
-        const url = `http://localhost:8000/delivered/${id}`;
+        const url = `https://fruit-server-ph.herokuapp.com/delivered/${id}`;
         fetch(url , {
             method : "PUT",
             headers:

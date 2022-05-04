@@ -7,6 +7,7 @@ import "./Inventories.css";
 const Inventories = () => 
 {
 
+    
     const [items , setItems] = GetFruits()
     
 

@@ -5,8 +5,13 @@ import ProducttTable from './ProducttTable';
 
 const Product = (props) => 
 {
+    const handleDelete =(id)=>
+    {
+        const deleteId = {
+            id : id
+        }
+    }
     const {item} = props;
-    const { img } = item;
     return (
         <article>
             <div className="col">
@@ -15,7 +20,7 @@ const Product = (props) =>
                         <ProducttTable  item = {item}></ProducttTable>
                         <button className='inv-btn rounded mt-5'>Update Stock</button>
 
-                        <Button variant='danger' className='d-block mt-5 mx-auto'>Delete Item</Button>
+                        <Button variant='danger' className='d-block mt-5 mx-auto' onClick={() => handleDelete(item._id)}>Delete Item</Button>
 
 
                     </div>

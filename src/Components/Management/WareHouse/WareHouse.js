@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import GetFruits from '../../../Hooks/GetFruits';
 import Product from '../Product/Product';
+import "./Warehouse.css"
 
 const WareHouse = () => {
 
@@ -43,7 +45,7 @@ const WareHouse = () => {
                                 </button>
                             </li>
                             {
-                                [...Array(pageCount).keys()].map(number => <li className={page === number ? "page-item active" : "page-item"}><button className="page-link" onClick={() => setPage(number)}>{number + 1}</button></li>)
+                                [...Array(pageCount).keys()].map(number => <li key={number} className={page === number ? "page-item active" : "page-item"}><button className="page-link" onClick={() => setPage(number)}>{number + 1}</button></li>)
                             }
                             <li className="page-item">
                                 <button className="page-link" aria-label="Next">
@@ -53,6 +55,7 @@ const WareHouse = () => {
                         </ul>
                     </article>
                 </div>
+                <Link to="/newitem"><button className='new-item-btn'>Add New Item</button></Link>
             </div>
         </div>
     );

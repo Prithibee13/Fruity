@@ -19,8 +19,8 @@ const Fruit = (props) => {
     }
     return (
         <article>
-            <div className="col">
-                <div className="card h-100 border-bottom-0 border-top-0 border-start-0 p-3 ">
+            <div data-aos="fade-up" className="col border-0 border-end-2">
+                <div className="card h-100 border-0 p-3 ">
                     <div className='round-img mx-auto'>
                         <img src={img} className="card-img-top w-100" alt="..." />
                     </div>

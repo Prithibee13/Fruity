@@ -12,7 +12,7 @@ const AddQuantity = (props) =>
                 <div className="row g-5">
                     <div className="col-md-6 col-12 mx-auto">
                         <h3>Want to restock the fruit item? click here</h3>
-                        <Card className='w-75 mx-auto my-5 border-0 shadow-lg text-center rounded p-5 restock-card'>
+                        <Card className='mx-auto my-5 border-0 shadow-lg text-center rounded-lg p-5' id="restock-card">
                             <Card.Body>
 
                                 <Card.Title>Restock here</Card.Title>

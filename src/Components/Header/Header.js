@@ -9,12 +9,17 @@ import "./Header.css"
 
 const Header = () => 
 {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
 
     const handleSignout =() =>
     {
         signOut(auth);
     }
+
+    const addItemLink = <Nav.Link as={Link} to='/home'>Add Item</Nav.Link>
+    const myItemsLink = <Nav.Link as={Link} to='/home'>My Items</Nav.Link>
+    const manageItemsLink = <Nav.Link as={Link} to='/home'>Manage Items</Nav.Link>
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" className='p-3' fixed='top' variant="dark">
@@ -28,9 +33,22 @@ const Header = () =>
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to='/about'>About </Nav.Link>
                             {
-                                user ? <button className='btn btn-link text-decoration-none text-white' onClick={handleSignout}>Sign Out</button> : <Nav.Link as={Link} to='/login'>Log In</Nav.Link>
+                                user ? manageItemsLink: null
+                            }
+
+                            {
+                                user ? addItemLink : null
+                            }
+
+                            {
+                                user? myItemsLink : null
+                            }
+
+                            
+
+                            {
+                                user ? <button className='btn btn-link text-decoration-none text-white' onClick={handleSignout}>Logout</button> : <Nav.Link as={Link} to='/login'>Log In</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>

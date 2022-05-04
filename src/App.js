@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home/Home';
 
 import Login from './Components/Login/Login';
+import AddProduct from './Components/Management/AddProducts/AddProduct';
 import Management from './Components/Management/Management/Management';
 import NotFound from './Components/NotFound/NotFound ';
 import FruitDetailes from './Components/Products/FruitsDetails/FruitDetailes/FruitDetailes';
@@ -21,7 +22,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/inventory/:id' element={<FruitDetailes></FruitDetailes>}></Route>
         <Route path='/manageInventories' element={<Management></Management>}></Route>
-        <Route></Route>
+        <Route path='/newItem' element={<AddProduct></AddProduct>}></Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>

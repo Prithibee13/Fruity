@@ -1,8 +1,12 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const AddProduct = () => 
 {
+
+    const [user] = useAuthState(auth);
     const handleaddProduct = (event) =>
     {
         event.preventDefault();
@@ -21,7 +25,9 @@ const AddProduct = () =>
             price : price,
             Quantity : quantity,
             supplier : supplier,
-            sale : sale
+            sale : sale,
+            user_Name : user.displayName,
+            user_Email : user.email
         }
 
         fetch('https://fruit-server-ph.herokuapp.com/addnewitem' ,{

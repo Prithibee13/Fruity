@@ -4,7 +4,11 @@ import { Table } from 'react-bootstrap';
 const ProducttTable = (props) => 
 {
     const {item} = props;
-    const {name, _id , sale , supplier_name , Quantity ,description , price} = item
+    const {name, _id , sale , supplier_name , Quantity ,description , price} = item;
+
+    const userTable = <tr><td>8</td><td>User Email</td><td>{item.user_Email}</td>
+</tr>
+
     return (
         <div>
             <Table  responsive bordered hover className=' p-5'>
@@ -47,6 +51,9 @@ const ProducttTable = (props) =>
                         <td>sale</td>
                         <td>{sale}</td>
                     </tr>
+                    {
+                        item.user_Name ? userTable : null
+                    }
                 </tbody>
             </Table>
         </div>

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './Components/Blog/Blog/Blog';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home/Home';
@@ -10,6 +11,8 @@ import Management from './Components/Management/Management/Management';
 import NotFound from './Components/NotFound/NotFound ';
 import FruitDetailes from './Components/Products/FruitsDetails/FruitDetailes/FruitDetailes';
 import Register from './Components/Register/Register';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
+import MyItems from './Components/User/MyItems/MyItems';
 
 function App() {
   return (
@@ -20,11 +23,21 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/inventory/:id' element={<FruitDetailes></FruitDetailes>}></Route>
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <FruitDetailes></FruitDetailes>
+          </RequireAuth>
+        }></Route>
         <Route path='/manageInventories' element={<Management></Management>}></Route>
         <Route path='/newItem' element={<AddProduct></AddProduct>}></Route>
-        <Route></Route>
-        <Route></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/myitems" element={
+          <RequireAuth>
+            <MyItems>
+            </MyItems>
+          </RequireAuth>
+        }></Route>
+
         <Route></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

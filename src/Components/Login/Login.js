@@ -6,11 +6,16 @@ import './Login.css'
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Divider from '../Common/Divider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => 
 {
+    const navigate = useNavigate();
+    const location = useLocation();
 
+
+    const from = location.state?.from?.pathname || '/';
     const [
         signInWithEmailAndPassword,
         emailUser,
@@ -20,17 +25,18 @@ const Login = () =>
 
       const [signInWithGoogle, GoogleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-      let erorr ;
+      let erorrElement;
 
       if (emailError) 
       {
-         erorr =  <div> <p>Error: {emailError.message} </p> </div>
+         erorrElement =  <div> <p>Error: {emailError?.message} {googleError?.message} </p> </div>
       }
 
-      else if(googleError)
+      if(emailUser || GoogleUser)
       {
-          erorr = <div><p>Errorr : {googleError.message}</p></div>
+        navigate(from , {replace: true});
       }
+
 
 
 
@@ -55,7 +61,8 @@ const Login = () =>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-12 shadow-lg p-5 mx-auto">
-                        <LoginWithEmail emailLogin={handleEmailPasswordLogin} erorr= {erorr}></LoginWithEmail>
+                        <LoginWithEmail emailLogin={handleEmailPasswordLogin}></LoginWithEmail>
+                        {erorrElement}
                         <Divider></Divider>
                         <div className='text-center social-btn'>
 

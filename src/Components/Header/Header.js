@@ -17,7 +17,7 @@ const Header = () =>
     }
 
     const addItemLink = <Nav.Link as={Link} to='/home'>Add Item</Nav.Link>
-    const myItemsLink = <Nav.Link as={Link} to='/home'>My Items</Nav.Link>
+    const myItemsLink = <Nav.Link as={Link} to='/myitems'>My Items</Nav.Link>
     const manageItemsLink = <Nav.Link as={Link} to='/home'>Manage Items</Nav.Link>
 
     return (
@@ -30,7 +30,7 @@ const Header = () =>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav className="ms-auto">
                             <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             {

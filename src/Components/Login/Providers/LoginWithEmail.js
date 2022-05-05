@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const LoginWithEmail = (props) => 
 {
-    const { emailLogin , error } = props
+    const { emailLogin } = props
     return (
         <div>
             <section className='text-center'>
@@ -25,7 +25,6 @@ const LoginWithEmail = (props) =>
                         Log in
                     </Button>
                 </Form>
-                <p>{error}</p>
 
                 <p>New in <span>Fruity</span>? <Link className='text-decoration-none text-danger' to='/register'>Register Now!</Link></p>
             </section>

@@ -32,7 +32,7 @@ const Inventories = () =>
             <div data-aos="fade-up" className="container">
                 <h2 className='text-center py-4 my-4'>Our Inventory</h2>
                 {
-                    isLoad ? <Loading></Loading> : null
+                    isLoad ? <Loading className="my-5 py-5"></Loading> : null
                 }
                 <div  className="row row-cols-1 row-cols-md-3 g-5">
                     {

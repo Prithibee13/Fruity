@@ -5,13 +5,26 @@ import ProducttTable from './ProducttTable';
 
 const Product = (props) => 
 {
+    
+    const {item} = props;
+
     const handleDelete =(id)=>
     {
         const deleteId = {
             id : id
-        }
+        };
+
+        fetch('https://fruit-server-ph.herokuapp.com/deleteitem' ,{
+            method : 'POST',
+            headers:
+            {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(deleteId)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
-    const {item} = props;
     return (
         <article>
             <div className="col">

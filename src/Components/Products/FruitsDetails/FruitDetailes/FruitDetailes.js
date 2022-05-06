@@ -11,8 +11,11 @@ const FruitDetailes = () => {
 
     const [item, setItem] = useState({})
 
+    
+    const domain = process.env.REACT_APP_SERVER_DOMAIN; 
+
     useEffect(() => {
-        const url = `https://fruit-server-ph.herokuapp.com/item/${id}`;
+        const url = `https://${domain}/item/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -47,7 +50,7 @@ const FruitDetailes = () => {
 
     async function handleItemRestock(item)
     {
-        const url = `https://fruit-server-ph.herokuapp.com/restock/${id}`;
+        const url = `https://${domain}/restock/${id}`;
         fetch(url , {
             method : "PUT",
             headers:
@@ -65,8 +68,7 @@ const FruitDetailes = () => {
 
     const handleItemDelivered = (item) =>
     {
-        
-        const url = `https://fruit-server-ph.herokuapp.com/delivered/${id}`;
+        const url = `https://${domain}/delivered/${id}`;
         fetch(url , {
             method : "PUT",
             headers:

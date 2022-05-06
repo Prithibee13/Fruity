@@ -6,7 +6,8 @@ const GetFruits = (page , size) =>
 
     useEffect(()=>
     {
-        fetch(`https://fruit-server-ph.herokuapp.com/items?page=${page}&size=${size}`)
+        const url = process.env.REACT_APP_SERVER_DOMAIN;
+        fetch(`https://${url}/items?page=${page}&size=${size}`)
         .then(res => res.json())
         .then(data => setFruits(data));
     } , [page , size])

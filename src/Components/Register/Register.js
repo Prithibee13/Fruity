@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Divider from '../Common/Divider';
+import Loading from '../Loading/Loading';
 import RegisterWithEmail from './Providers/RegisterWithEmail';
 import RegisterWithGithub from './Providers/RegisterWithGithub';
 import RegisterWithGoogle from './Providers/RegisterWithGoogle';
@@ -15,7 +16,7 @@ const Register = () =>
         emailUser,
         emailLoading,
         emailError,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification : true});
 
     const [signInWithGoogle, GoogleUser, googleLoading, googleError] = useSignInWithGoogle(auth ,{sendEmailVerification : true});
 
@@ -38,10 +39,17 @@ const Register = () =>
 
     let erorrElement;
 
+    let loadingElement;
+
     
     if (emailError) 
     {
        erorrElement =  <div> <p>Error: {emailError?.message} {googleError?.message} </p> </div>
+    }
+
+    if(emailLoading || googleLoading)
+    {
+        loadingElement = <Loading></Loading>
     }
 
     return (
@@ -56,6 +64,7 @@ const Register = () =>
                            <RegisterWithGithub></RegisterWithGithub>
                            <RegisterWithGoogle googleSignup = {handleGoogleRegister}></RegisterWithGoogle>
                        </div>
+                       {loadingElement}
                    </div>
                </div>
            </div> 

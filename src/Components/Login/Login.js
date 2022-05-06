@@ -63,7 +63,9 @@ const Login = () =>
                     <div className="col-md-6 col-12 shadow-lg p-5 mx-auto">
                         <LoginWithEmail emailLogin={handleEmailPasswordLogin}></LoginWithEmail>
                         {erorrElement}
+                        <p>Forget Password </p>
                         <Divider></Divider>
+
                         <div className='text-center social-btn'>
 
                             <LoginWithGoogle googleLogin={handleGoogleLogIn}></LoginWithGoogle>

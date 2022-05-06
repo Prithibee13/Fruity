@@ -17,7 +17,7 @@ const Register = () =>
         emailError,
       ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [signInWithGoogle, GoogleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, GoogleUser, googleLoading, googleError] = useSignInWithGoogle(auth ,{sendEmailVerification : true});
 
     const handleEmailPasswordRegister = (event) =>
     {
@@ -36,12 +36,21 @@ const Register = () =>
         signInWithGoogle();
     }
 
+    let erorrElement;
+
+    
+    if (emailError) 
+    {
+       erorrElement =  <div> <p>Error: {emailError?.message} {googleError?.message} </p> </div>
+    }
+
     return (
         <div>
            <div className="container">
                <div className="row">
                    <div className="col-md-8 col-12 shadow-lg p-5 mx-auto">
                        <RegisterWithEmail emailRegister = {handleEmailPasswordRegister}></RegisterWithEmail>
+                       {erorrElement}
                        <Divider></Divider>
                        <div className='text-center social-btn'>
                            <RegisterWithGithub></RegisterWithGithub>

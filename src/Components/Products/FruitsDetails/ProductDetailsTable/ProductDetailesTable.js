@@ -6,7 +6,7 @@ const ProductDetailesTable = (props) =>
 
 
     const { item  } = props;
-    const { name ,price , Quantity , _id , supplier_name , sale , img } = item;
+    const { name ,price , Quantity , _id , supplier_name , supplier , sale , img } = item;
     
     
     return (
@@ -52,7 +52,7 @@ const ProductDetailesTable = (props) =>
                                     <tr>
                                         <td>5</td>
                                         <td>Supplier Name</td>
-                                        <td>{supplier_name}</td>
+                                        <td>{supplier_name || supplier}</td>
                                     </tr>
                                     <tr>
                                         <td>6</td>

@@ -8,7 +8,7 @@ const NotFound = () => {
     return (
         <div className='mar-20'>
             <div className="text-center">
-                <div className="container">
+                <div className="container not-found">
 
                     <h2 className='display-1'>4 0 4</h2>
                     <h3 className='display-4'>OOPS! PAGE NOT FOUND</h3>

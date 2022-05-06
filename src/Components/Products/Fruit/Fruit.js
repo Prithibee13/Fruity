@@ -2,11 +2,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import "./Fruit.css"
+import "./Fruit.css";
 const Fruit = (props) => {
 
     const { fruit } = props;
-    const { _id, name, img , description , Quantity , supplier_name , price } = fruit;
+    const { _id, name, img , description , Quantity , supplier_name , supplier , price } = fruit;
 
     const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const Fruit = (props) => {
 
     const toManagement = (id) =>
     {
-        user ? navigate(`inventory/${id}`) : navigate('/login'); 
+        user ? navigate(`/inventory/${id}`) : navigate('/login'); 
         
     }
     return (
@@ -29,7 +29,7 @@ const Fruit = (props) => {
                         <p>{description}</p>
                         <p>Price : {price}</p>
                         <p>In stock : {Quantity}</p>
-                        <p>Supplier : {supplier_name}</p>
+                        <p>Supplier : {supplier_name || supplier}</p>
                         <button className='inv-btn rounded' onClick={()=>toManagement(_id)}>Update Stock</button>
 
                     </div>

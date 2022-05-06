@@ -11,7 +11,7 @@ const ProducttTable = (props) =>
 
     return (
         <div>
-            <Table  responsive bordered hover className=' p-5'>
+            <Table striped responsive bordered hover className=' p-5'>
                 <thead>
                     <tr>
                         <th>Sl</th>

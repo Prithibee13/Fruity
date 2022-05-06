@@ -14,9 +14,9 @@ const AddProduct = () =>
         const name = event.target.name.value;
         const img = event.target.img.value;
         const description = event.target.description.value;
-        const price = event.target.price.value;
-        const quantity = event.target.quantity.value;
-        const sale = event.target.sale.value;
+        const price = parseInt(event.target.price.value);
+        const quantity = parseInt(event.target.quantity.value);
+        const sale = parseInt(event.target.sale.value);
         const supplier = event.target.supplier.value;
         const newItem = {
             name : name,
@@ -45,6 +45,8 @@ const AddProduct = () =>
             })
 
         /*  */
+
+        event.target.reset();
     }
 
     return (
@@ -77,7 +79,7 @@ const AddProduct = () =>
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicSupplier">
-                                        <Form.Control type="text" name="Supplier" placeholder="Enter Supplier name" required />
+                                        <Form.Control type="text" name="supplier" placeholder="Enter Supplier name" required />
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicSale">

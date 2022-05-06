@@ -7,7 +7,7 @@ import Q4 from '../Q4/Q4';
 const Blog = () => {
     return (
         <div className='mar-20' data-aos="fade-up">
-            <h2>A Good developer must to know</h2>
+            <h2 className='text-center'>A Good developer must to know</h2>
 
             <article>
                 <Q1></Q1>

@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 const Q3 = () => {
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className="container">
                 <h2 className="text-center my-5">Difference between SQL and NoSQL</h2>
                 <div className="row">

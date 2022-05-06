@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 const Q1 = () => {
     return (
-        <div>
+        <div data-aos='fade-up'>
             <div className="container my-5">
 
                 <h2 className='text-center my-3 py-3'>Difference between Javascript an Node js</h2>

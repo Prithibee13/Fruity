@@ -9,13 +9,17 @@ import Divider from '../Common/Divider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
 
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [email , setEmail] = useState('')
+    const [forgetEmail , setForgetEmail] = useState('');
+
+    const [token , setToken] = useState('');
+    
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
     const from = location.state?.from?.pathname || '/';
@@ -36,7 +40,7 @@ const Login = () => {
 
     if (emailUser || GoogleUser) {
         navigate(from, { replace: true });
-    }
+    } 
 
     let wait;
 
@@ -47,14 +51,20 @@ const Login = () => {
 
 
 
-    const handleEmailPasswordLogin = (event) => {
+    const handleEmailPasswordLogin = async (event) => 
+    {
         event.preventDefault();
 
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        setEmail(email);
-        signInWithEmailAndPassword(email, password);
+
+    
+        await signInWithEmailAndPassword(email, password);
+
+        const {data} = await axios.post("https://fruit-server-ph.herokuapp.com/login" , { email })
+        localStorage.setItem('accessToken' , data);   
+
     }
 
 
@@ -66,7 +76,7 @@ const Login = () => {
 
     async function handleResetPassword()
     {
-        await sendPasswordResetEmail(email);
+        await sendPasswordResetEmail();
 
         toast("password reset Email send");
 
@@ -83,7 +93,7 @@ const Login = () => {
                     <div className="col-md-6 col-12 shadow-lg p-5 mx-auto">
                         <LoginWithEmail emailLogin={handleEmailPasswordLogin}></LoginWithEmail>
                         {erorrElement}
-                        <p>Forget Password : <input type={email} onBlur={(e) => setEmail(e.target.value)} name="email" placeholder='Enter your email'/>  <button onClick={handleResetPassword}>Click here</button></p>
+                        <p>Forget Password : <input type='email' onBlur={(e) => setForgetEmail(e.target.value)} name="email" placeholder='Enter your email'/>  <button onClick={handleResetPassword}>Click here</button></p>
                         {toastC}
                         <Divider></Divider>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import "./AddProduct.css"
 
 const AddProduct = () => 
 {
@@ -85,8 +86,8 @@ const AddProduct = () =>
                                     <Form.Group className="mb-3" controlId="formBasicSale">
                                         <Form.Control type="text" name='sale'  placeholder="Enter product's sale" required />
                                     </Form.Group>
-                                    <button type="submit">
-                                        Submit
+                                    <button className='add-btn my-5' type="submit">
+                                        Add Product
                                     </button>
                                 </Form>
                             </div>

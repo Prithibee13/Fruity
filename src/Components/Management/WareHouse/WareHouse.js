@@ -18,13 +18,11 @@ const WareHouse = () => {
 
     let isLoad = true;
 
-    if(items.length !==0)
-    {
+    if (items.length !== 0) {
         isLoad = false;
     }
 
-    useEffect(() => 
-    {
+    useEffect(() => {
         const url = process.env.REACT_APP_SERVER_DOMAIN;
         fetch(`https://${url}/itemsCount`)
             .then(res => res.json())
@@ -43,9 +41,9 @@ const WareHouse = () => {
                     isLoad ? <Loading></Loading> : null
                 }
                 <div className="row row-cols-1 row-cols-md-2 g-5">
-                {
-                    items.map(item => <Product key={item._id} item = {item}></Product>)
-                }
+                    {
+                        items.map(item => <Product key={item._id} item={item}></Product>)
+                    }
                 </div>
 
                 <div className="pagination-container  my-5 py-4">
@@ -67,7 +65,10 @@ const WareHouse = () => {
                         </ul>
                     </article>
                 </div>
-                <Link to="/newitem"><button className='new-item-btn'>Add New Item</button></Link>
+                <div className="text-center">
+
+                    <Link to="/newitem"><button className='new-item-btn rounded rounded'>Add New Item here</button></Link>
+                </div>
             </div>
         </div>
     );

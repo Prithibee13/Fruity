@@ -13,4 +13,12 @@
 #### About site
 
 - Using react , react-router.
--  Use css , react-bootstrap for styling.
+- Use css , react-bootstrap for styling.
+- Use firebase for for hosting , authentication.
+- Use Nodejs as server system.
+- Use Exprees as nodejs framework. 
+- Use mongoDB for storing data.
+- Give some common FAQ for web designer.
+- Use Heroku for a online server-system
+- Use cors for cross-platform web services.
+- Use loader for wait for functionalities.

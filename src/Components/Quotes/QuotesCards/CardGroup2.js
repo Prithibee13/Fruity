@@ -13,8 +13,8 @@ const CardGroup2 = () => {
 
                             <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
                             <div className="card-body">
-                                <h3 className="card-title">Francis</h3>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h3 className="card-title text-center">Francis</h3>
+                                <p className="card-text">There Fresh and healthy fruits is best seeling for us. Theire cold storage , logistic , delivery system is best in town.</p>
                             </div>
                         </div>
                     </div>
@@ -24,8 +24,8 @@ const CardGroup2 = () => {
                             <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
 
                             <div className="card-body">
-                                <h3 className="card-title">Summer</h3>
-                                <p className="card-text">This is a short card.</p>
+                                <h3 className="card-title text-center">Summer</h3>
+                                <p className="card-text">There delivery system is best. Quick and safe delivery system give us a good vibe about them.</p>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const CardGroup2 = () => {
                             <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
                             <div className="card-body">
                                 <h3 className="card-title text-center">Alex</h3>
-                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                                <p className="card-text">Our main supply come from them. Always they have a good quantity stock . theire price is much cheap than any other storage facility in town</p>
                             </div>
                         </div>
                     </div>

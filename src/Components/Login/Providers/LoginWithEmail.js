@@ -7,7 +7,7 @@ const LoginWithEmail = (props) =>
     const { emailLogin } = props
     return (
         <div>
-            <section className='text-center'>
+            <section className='text-center mar-20'>
 
                 <h2>Please Log in here first!</h2>
 

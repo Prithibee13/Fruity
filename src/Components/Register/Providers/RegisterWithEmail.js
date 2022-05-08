@@ -6,7 +6,7 @@ const RegisterWithEmail = (props) => {
     const { emailRegister } = props;
     return (
         <div>
-            <section className='text-center register-form'>
+            <section className='text-center register-form mar-20'>
 
                 <h2>Please register here first!</h2>
 

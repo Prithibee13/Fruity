@@ -55,7 +55,7 @@ const UserProduct = (props) => {
 
                                 <button className='inv-btn rounded' onClick={() => toManagement(_id)}>Update Stock</button>
 
-                                <Button variant='danger' className='delete-btn' onClick={() => handleDelete(fruit._id)} >Delete</Button>
+                                <Button variant='danger' className='delete-btn' onClick={() => handleDelete(fruit._id)} >Delete Item</Button>
                             </div>
                         </div>
                     </div>

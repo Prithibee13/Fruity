@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import Divider from '../Common/Divider';
 import Loading from '../Loading/Loading';
@@ -29,12 +30,13 @@ const Register = () =>
         const password = event.target.password.value;
 
         createUserWithEmailAndPassword(email , password)
-        
+        toast("email send");
     }
 
     const handleGoogleRegister = () =>
     {
         signInWithGoogle();
+        toast("email send");
     }
 
     let erorrElement;
@@ -51,10 +53,12 @@ const Register = () =>
     {
         loadingElement = <Loading></Loading>
     }
+    
 
     return (
         <div>
            <div className="container">
+                <ToastContainer/>
                <div className="row">
                    <div className="col-md-8 col-12 shadow-lg p-5 mx-auto">
                        <RegisterWithEmail emailRegister = {handleEmailPasswordRegister}></RegisterWithEmail>

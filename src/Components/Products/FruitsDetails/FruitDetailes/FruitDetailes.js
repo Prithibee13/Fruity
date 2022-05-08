@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AddQuantity from '../AddQuantity/AddQuantity';
 import ProductDetailesTable from '../ProductDetailsTable/ProductDetailesTable';
 import "./FoodDetailes.css"
@@ -92,6 +92,12 @@ const FruitDetailes = () => {
                 <button className='deliver-btn' onClick={handleDelivered}>Delivered</button>
             </div>
             <AddQuantity reStock ={handleRestock}></AddQuantity>
+
+            <div data-aos="fade-up" className="text-center">
+                    <Link to="/manageInventories"><button className=' mng-btn rounded'>Manage Your Invenories</button></Link>
+                </div>
+
+            
         </div>
     );
 };
